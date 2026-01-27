@@ -1,0 +1,139 @@
+/* Základní nastavení */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+/* Navigace */
+nav {
+    background-color: #2c3e50;
+    color: white;
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: #3498db;
+}
+
+/* Hero sekce */
+.hero {
+    height: 400px;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../img/rozhled.png') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+}
+
+/* Obsah */
+.container {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+h2 {
+    color: #2c3e50;
+    border-bottom: 2px solid #3498db;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+}
+
+/* Galerie */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.gallery img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+    transition: transform 0.3s;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+}
+
+/* Patička */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #2c3e50;
+    color: white;
+    margin-top: 40px;
+}
+/* --- VYLEPŠENÁ GALERIE --- */
+.gallery {
+    display: grid;
+    /* Automaticky vytvoří sloupce podle šířky obrazovky */
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); 
+    gap: 25px;
+    padding: 10px 0;
+}
+
+.gallery-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden; /* Ořízne obrázek, aby nepřetékal přes kulaté rohy */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Jemný stín */
+    transition: transform 0.3s ease;
+}
+
+.gallery-card:hover {
+    transform: translateY(-5px); /* Při najetí myší se karta "vznese" */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.gallery-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover; /* Zajistí, že se fotka nedeformuje */
+    display: block;
+}
+
+.gallery-card p 
+    padding: 15px;
+    text-align: center;
+    font-size: 0.95rem;
+    color: #555;
+    font-weight: 500;
